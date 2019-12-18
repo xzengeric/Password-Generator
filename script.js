@@ -4,10 +4,6 @@ let finalPassword ="";
 
 function generatePassword() {
     let pwd = "";
-    let lower = confirm("Including lowercases characters?");
-    let upper = confirm("Including uppercases characters?");
-    let number = confirm("Including Numbers?");
-    let symbol = confirm("Including Symbols?");
     let resultEL = document.getElementById('result');
     let lengthEL = document.getElementById('length');
     let length = +lengthEL.value;
@@ -16,7 +12,15 @@ function generatePassword() {
     // console.log(upper);
     // console.log(number);
     // console.log(symbol);
+    if (length < 8 || length >128) {
+        alert("Please using 8 - 128 characters password");  
+        return false; 
+    }
 
+    let lower = confirm("Including lowercases characters?");
+    let upper = confirm("Including uppercases characters?");
+    let number = confirm("Including Numbers?");
+    let symbol = confirm("Including Symbols?");
 
     for (let i = 0; i < length; i++) {
 
